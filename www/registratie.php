@@ -35,7 +35,7 @@
         </div>
         <div class="form-group">
             <label for="notActive">Niet Actief</label>
-            <input type="radio" name="isActiveForm" id="notActive" value="0">
+            <input type="radio" name="isActiveForm" id="notActive" value="0" checked>
             <label for="active">Actief</label>
             <input type="radio" name="isActiveForm" id="active" value="1">
         </div>
