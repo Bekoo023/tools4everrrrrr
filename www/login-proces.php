@@ -16,8 +16,16 @@ if (isset($_POST['submit'])) {
                 $gebruiker = mysqli_fetch_assoc($result);
 
                 if ($gebruiker['password'] == $password) {
-                    echo "Je bent ingelogd";
-                    header("location: index.php");
+
+                    session_start();
+                    $_SESSION['user_id'] = $gebruiker['id'];
+                    $_SESSION['email'] = $gebruiker['email'];
+                    $_SESSION['voornaam'] = $gebruiker['firstname'];
+                    $_SESSION['achternaam'] = $gebruiker['lastname'];
+                    $_SESSION['password'] = $gebruiker['password'];
+                    $_SESSION['role'] = $gebruiker['role'];
+
+                    header("location: dashboard.php");
                 }
             }
         }
