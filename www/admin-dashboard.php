@@ -2,7 +2,7 @@
 
 session_start();
 
-if ($_SESSION['role'] != 'customer') {
+if ($_SESSION['role'] != 'administrator') {
     header("location: index.php");
     exit;
 }
@@ -19,7 +19,7 @@ if ($_SESSION['role'] != 'customer') {
 </head>
 
 <body>
-    <h1>hallo jongetje cus</h1>
+    <h1>hallo jongetje admin</h1>
 </body>
 
 </html>

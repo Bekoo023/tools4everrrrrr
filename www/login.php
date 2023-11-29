@@ -14,7 +14,7 @@
 
         <label for="passwordForm">Wachtwoord:</label>
         <input type="password" name="passwordForm" id="passwordForm"><br>
-        
+
         <button type="submit" name="submit">Login</button>
     </form>
 </body>

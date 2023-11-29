@@ -18,15 +18,21 @@ if (isset($_POST['submit'])) {
                 if ($gebruiker['password'] == $password) {
 
                     session_start();
-                    $_SESSION['user_id'] = $gebruiker['id'];
                     $_SESSION['email'] = $gebruiker['email'];
-                    $_SESSION['voornaam'] = $gebruiker['firstname'];
-                    $_SESSION['achternaam'] = $gebruiker['lastname'];
                     $_SESSION['password'] = $gebruiker['password'];
-                    $_SESSION['role'] = $gebruiker['role'];
 
-                    header("location: dashboard.php");
+                    if ($gebruiker['role'] === 'administrator') {
+                        header("location: admin-dashboard.php");
+                        exit();
+                    } elseif ($gebruiker['role'] === 'customer') {
+                        header("location: dashboard.php");
+                        exit();
+                    }
                 }
+            }
+
+            if (empty($_POST['emailForm']) || empty($_POST['passwordForm'])) {
+                header("location: login.php");
             }
         }
     }
