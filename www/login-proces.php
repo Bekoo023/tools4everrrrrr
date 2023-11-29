@@ -24,9 +24,12 @@ if (isset($_POST['submit'])) {
                     if ($gebruiker['role'] === 'administrator') {
                         header("location: admin-dashboard.php");
                         exit();
+                    } elseif ($gebruiker['role'] === 'employee') {
+                        header("location: employee-dashboard.php");
+                        exit();
                     } elseif ($gebruiker['role'] === 'customer') {
                         header("location: dashboard.php");
-                        exit();
+                        exit;
                     }
                 }
             }

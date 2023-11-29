@@ -2,11 +2,6 @@
 
 session_start();
 
-if ($_SESSION['role'] != 'employee') {
-    header("location: index.php");
-    exit;
-}
-
 ?>
 
 <!DOCTYPE html>

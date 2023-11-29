@@ -2,11 +2,6 @@
 
 session_start();
 
-if ($_SESSION['role'] != 'administrator') {
-    header("location: index.php");
-    exit;
-}
-
 ?>
 
 <!DOCTYPE html>
