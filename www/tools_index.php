@@ -28,7 +28,11 @@ $all_tools = mysqli_fetch_all($result, MYSQLI_ASSOC);
                 <th>Categorie:</th>
                 <th>Prijs:</th>
                 <th>Merk:</th>
-                <th>Info:</th>
+                <th>Info:</th><br>
+                <form action="search.php" method="get">
+                    <input type="text" name="search" id="search" placeholder="Zoek naar gereedschap">
+                    <button type="submit" name="search_submit">Zoek</button>
+                </form>
             </tr>
         </thead>
         <tbody>
