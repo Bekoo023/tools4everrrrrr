@@ -1,9 +1,11 @@
 <?php
 
+require 'database.php';
+
 session_start();
-
+echo($_SESSION['firstname'] && $_SESSION['lastname']);
 ?>
-
+ 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +16,7 @@ session_start();
 </head>
 
 <body>
-    <h1>hallo jongetje admin</h1>
+
 </body>
 
 </html>

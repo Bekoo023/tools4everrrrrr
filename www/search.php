@@ -17,6 +17,11 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     }
 }
 
+echo $tools['tool_name'];
+echo $tools['tool_category'];
+echo $tools['tool_price'];
+echo $tools['tool_brand'];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,11 +31,6 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     <title>Document</title>
 </head>
 <body>
-    <?php foreach($tools as $tool): ?>
-        <p><?php echo $tool["tool_name"] ?></p>
-        <p><?php echo $tool["tool_category"] ?></p>
-        <p><?php echo $tool["tool_price"] ?></p>
-        <p><?php echo $tool["tool_brand"] ?></p>
-    <?php endforeach; ?>
+
 </body>
 </html>

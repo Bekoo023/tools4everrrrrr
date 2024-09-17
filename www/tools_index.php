@@ -54,6 +54,7 @@ $all_tools = mysqli_fetch_all($result, MYSQLI_ASSOC);
                         <p><?php echo $tool["tool_brand"] ?></p>
                     </td>
                     <td><button><a href="tools_detail.php?id=<?php echo $tool["tool_id"] ?>"> Klik voor meer info</a></button></td>
+                    <td><button><a href="tools_delete.php?id=<?php echo $tool["tool_id"] ?>"> Verwijder</a></button></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
