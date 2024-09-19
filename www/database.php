@@ -1,7 +1,13 @@
 <?php
-$host  = "localhost";
-$dbuser = "root";
-$dbpass = "";
+$servername  = "localhost";
+$username = "root";
+$password = "";
 $dbname = "tools4ever";
 
-$conn = mysqli_connect($host, $dbuser, $dbpass, $dbname);
+try{
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+}
+
+    catch(PDOException $e){
+        echo "Error: " . $e->getMessage();
+    }

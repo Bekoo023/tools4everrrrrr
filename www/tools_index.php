@@ -3,10 +3,10 @@
 require 'database.php';
 
 $sql = "SELECT * FROM tools";
+$stmt = $conn->prepare($sql);
+$result = $stmt->execute();
 
-$result = mysqli_query($conn, $sql);
-
-$all_tools = mysqli_fetch_all($result, MYSQLI_ASSOC);
+$all_tools = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
@@ -55,6 +55,7 @@ $all_tools = mysqli_fetch_all($result, MYSQLI_ASSOC);
                     </td>
                     <td><button><a href="tools_detail.php?id=<?php echo $tool["tool_id"] ?>"> Klik voor meer info</a></button></td>
                     <td><button><a href="tools_delete.php?id=<?php echo $tool["tool_id"] ?>"> Verwijder</a></button></td>
+                    <td><button><a href="tools_update.php?id=<?php echo $tool["tool_id"] ?>"> Update</a></button></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>

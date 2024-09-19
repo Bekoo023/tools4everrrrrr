@@ -4,9 +4,10 @@ require 'database.php';
 
 $sql = "SELECT * FROM tools";
 
-$result = mysqli_query($conn, $sql);
+$stmt = $conn->prepare($sql);
+$result = $stmt->execute();
 
-$all_tools = mysqli_fetch_assoc($result);
+$all_tools = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
