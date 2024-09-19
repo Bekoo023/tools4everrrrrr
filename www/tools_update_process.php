@@ -43,12 +43,18 @@ if (!isset($_POST['submit'])) {
     exit;
   }
 
-  $sql = "UPDATE tools 
-        SET tool_name = :name_placeholder,
-            tool_category = :category_placeholder,
-            tool_brand = :brand_placeholder,
-            tool_price = :price_placeholder 
-        WHERE tool_id = :id_placeholder";
+$tool_name = $_POST['tool_name'];
+$tool_category = $_POST['tool_category'];
+$tool_brand = $_POST['tool_brand'];
+$tool_price = $_POST['tool_price'];
+$tool_id = $_POST['tool_id'];
+
+$sql = "UPDATE tools 
+  SET tool_name = :name_placeholder,
+    tool_category = :category_placeholder,
+    tool_brand = :brand_placeholder,
+    tool_price = :price_placeholder 
+  WHERE tool_id = :id_placeholder";
 
 $stmt = $conn->prepare($sql);
 $stmt->bindParam(":name_placeholder", $tool_name);
